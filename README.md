@@ -1,6 +1,6 @@
 # aspnet-samples
 
-Auth0 meteor examples
+Auth0  asp.net examples
 
 
 The example from this repo https://github.com/auth0/auth0-aspnet needs to be moved to this one
