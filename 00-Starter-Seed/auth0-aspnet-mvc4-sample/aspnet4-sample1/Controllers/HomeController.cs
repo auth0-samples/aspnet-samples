@@ -9,14 +9,13 @@ namespace aspnet4_sample1.Controllers
     {
         public ActionResult Index()
         {
-            var currentClaims = ClaimsPrincipal.Current;
+            var principal = ClaimsPrincipal.Current;
 
-            if (currentClaims.Claims.Any())
+            if (principal.Identity.IsAuthenticated)
             {
-                string name = currentClaims.FindFirst("name").Value;
-                ViewBag.Name = name;
+                ViewBag.Email = principal.FindFirst("email").Value;
+                ViewBag.Name = principal.Identity.Name;
             }
-            else ViewBag.Name = "";
 
             return View();
         }
